@@ -1,7 +1,7 @@
 #include <Wire.h>
 #include <Adafruit_INA219.h>
 
-
+// defining pinout
 #define RED_PIN 2
 #define GREEN_PIN 3
 #define WHITE_PIN 4
@@ -9,10 +9,12 @@
 #define BUTTON_PIN 13
 #define SHUNT_CONDUCTANCE 10 // 0.100 Ohm
 
-#define DEBOUNCER_THRESHOLD 100
-#define MAX_CURRENT 100
-#define MIN_WHITE_LIGHT 50
+// defining constants
+#define DEBOUNCER_THRESHOLD 100 // used to wait a stable state of the button
+#define MAX_CURRENT 500 // define the mix current in mA
+#define MIN_WHITE_LIGHT 50 // time of the white led
 
+// defining states
 #define STATE_INIT  0
 #define STATE_RUN  1
 #define STATE_ERROR  2
@@ -23,14 +25,17 @@
 #define OUTPUT_ON 0
 #define OUTPUT_OFF 1
 
-Adafruit_INA219 ina219;
+Adafruit_INA219 ina219; // current sensor
+
+// counter
 long last_time;
 int counter;
-int state = STATE_INIT;
 int debouncer_counter;
+// state of the state machine
+int state = STATE_INIT;
 
 void setup() {
-  // put your setup code here, to run once:
+  // init pinout
   pinMode(RED_PIN, OUTPUT);
   pinMode(GREEN_PIN, OUTPUT);
   pinMode(WHITE_PIN, OUTPUT);
@@ -43,6 +48,7 @@ void setup() {
   digitalWrite(WHITE_PIN, LED_ON);
   digitalWrite(OUTPUT_CTRL_PIN, OUTPUT_OFF);
 
+  // init current sensor
   if (! ina219.begin()) {
     while (1) { delay(10); }
   }
@@ -52,7 +58,7 @@ void setup() {
   digitalWrite(GREEN_PIN, LED_OFF);
   digitalWrite(WHITE_PIN, LED_OFF);
 
-  // init
+  // init counters
   counter = 0;
   last_time = millis();
   state = STATE_INIT;
@@ -86,7 +92,7 @@ void state_run(){
   int current_mA = 0;
 
   digitalWrite(RED_PIN, LED_OFF);
-  digitalWrite(GREEN_PIN, LED_ON);
+  //digitalWrite(GREEN_PIN, LED_ON);
   digitalWrite(OUTPUT_CTRL_PIN, OUTPUT_ON);
 
   shuntvoltage = ina219.getShuntVoltage_mV();
@@ -99,12 +105,14 @@ void state_run(){
     return;
   }
 
-  counter += max(current_mA>>4, 1);
+  counter++ ;
   if (counter < MIN_WHITE_LIGHT){
     digitalWrite(WHITE_PIN, LED_ON);
+    digitalWrite(GREEN_PIN, LED_OFF);
   }else{
     digitalWrite(WHITE_PIN, LED_OFF);
-    if (counter > 3000){
+    digitalWrite(GREEN_PIN, LED_ON);
+    if (counter > (max(MAX_CURRENT<<2 - current_mA<<2, 1) + MIN_WHITE_LIGHT)){
       counter = 0;
     }
   }
