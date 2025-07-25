@@ -85,3 +85,49 @@ Before you get started building your own educational electronics kit, make sure 
 
 > 🔧 Additional tools and materials may be required depending on the specific module you're building. These will be listed in each module’s construction guide.
 
+
+## 📁 Repository Structure
+
+This repository is organized to make it easy for makers to explore, print, and build each module.
+
+### 🧩 `modules/` Directory
+
+This is the core directory containing **all available modules**. Each module has its own subfolder, structured as follows:
+
+```
+modules/
+├── led/
+├── button/
+├── power_supply/
+├── ...
+└── bases/
+```
+
+#### 📦 Module folders (`led/`, `button/`, etc.)
+
+Each folder represents a **self-contained module** and includes:
+
+* One or more **STL files** for 3D printing (at minimum, a `top.stl` for the lid)
+* **Preview images** (same name as the STL, e.g., `top.png`) for visual reference
+* Optionally:
+
+  * A `PCB/` folder with files for the **custom circuit board**
+  * A folder for **firmware** or **code** (if the module is programmable)
+  * Additional documentation
+* A `README.md` explaining the module's purpose, required components, and how to assemble it
+
+#### 🧱 Special folder: `bases/`
+
+This folder contains **base enclosures** used by other modules.
+Each module specifies **which base it builds upon** (e.g., 1x1, 1x2…).
+
+Think of it as the physical "shell" shared by multiple modules.
+
+---
+
+This structure ensures modularity and reuse, making it easy to:
+
+* Print only what you need
+* Understand how each part fits together
+* Extend the project with your own creations
+
