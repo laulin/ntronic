@@ -36,3 +36,52 @@ You are welcome to build, use, and modify this project. However, the following c
 This repository contains software code, 3D-printable models, and PCB design files required to build the physical modules.
 
 By using this repository, you acknowledge and agree to comply with these conditions. See LICENCE.txt for more details.
+
+# Quick start guide
+
+## 🛠️ Required Tools and Materials
+
+Before you get started building your own educational electronics kit, make sure you have the following **tools** and **materials** on hand:
+
+### 🧰 Tools
+
+* **3D Printer**
+  A 3D printer is required to print the module enclosures. I personally use a **Bambu Lab X1C with AMS** to enable easy color changes for markings.
+
+* **Small Phillips screwdriver**
+  Used to install the **metal contact tabs** (battery terminal-style connectors) inside the modules.
+
+* **Soldering iron**
+  Needed to insert **brass heat-set inserts** into the printed parts.
+
+* **Hex key for M3 screws**
+  Required for assembling the modules with M3 screws.
+
+
+### 🧱 Materials
+
+* **PETG Filament**
+  PETG is recommended for its **durability and resistance to rough handling by children**.
+
+  * I use **gray** for the base parts and **yellow** for the **"tops"** (the removable lids).
+  * If your printer doesn’t support multi-color prints, you can **add markings manually** using **paint** or a **permanent marker**.
+  * Recommended brand: **Overture PETG**.
+
+* **Brass M3 heat-set inserts**
+  Example: [Ruthex M3x5.7 Inserts (Amazon link)](https://www.amazon.fr/dp/B08BCRZZS3)
+
+* **AAA battery-type metal contact tabs**
+  Used as connection terminals between modules.
+  Example: [AliExpress product link](https://fr.aliexpress.com/item/32946601230.html)
+
+* **M2x6 screws**
+  Example: [Amazon link](https://www.amazon.fr/dp/B0CH9ZXMSK)
+
+* **M3x10 screws**
+  Example: [Amazon link](https://www.amazon.fr/dp/B0DN79L3NP)
+
+* **20–22 AWG wire**
+  Standard insulated wire for connecting components inside the modules.
+
+> 🔧 Additional tools and materials may be required depending on the specific module you're building. These will be listed in each module’s construction guide.
+
