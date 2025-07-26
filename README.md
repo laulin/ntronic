@@ -131,3 +131,38 @@ This structure ensures modularity and reuse, making it easy to:
 * Understand how each part fits together
 * Extend the project with your own creations
 
+
+## 🖨️ 3D Printing Instructions
+
+All modules are designed to be easy to print with standard FDM 3D printers. Here are some recommended print settings to ensure optimal results:
+
+### 🔧 Recommended Settings
+
+* **Nozzle size**: `0.6 mm`
+  A slightly larger nozzle helps speed up prints and improves durability.
+
+* **Layer height**: `0.3 mm`
+  Perfect balance between print speed and detail.
+
+* **Top/Bottom shell layers**: `4`
+  This ensures a clean and solid finish on all surfaces.
+
+* **Top/Bottom surface pattern**: `Hilbert Curve`
+  Produces a visually appealing texture while hiding minor imperfections.
+
+* **Build plate**:
+  A **textured plate** is recommended to minimize surface defects and improve adhesion.
+
+---
+
+### ⚠️ Support and Adhesion Notes
+
+Unless explicitly mentioned in a module's README:
+
+* **No support structures** are required
+* **No raft or brim** is necessary
+
+All parts are designed to be **printable flat on the bed** without extra processing.
+
+
+
