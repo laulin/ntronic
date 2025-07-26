@@ -2,7 +2,7 @@
 
 **Warning:** **Never include more than one `power_supply` module in a single circuit**—this can damage components!
 
-This module provides safe 5V power to the rest of your circuit via a **USB‑C connector** (e.g. \[Amazon product link]) and includes built‑in short‑circuit protection.
+This module provides safe 5V power to the rest of your circuit via a **USB‑C connector** (e.g. [Amazon product link](https://www.amazon.fr/dp/B0D3X3QPD1)) and includes built‑in short‑circuit protection.
 
 ---
 
@@ -24,7 +24,7 @@ Please print the following parts:
 
 * Base: `bases/base_line_1x2.stl`
   (Standard 1×2 base)
-  ![button.png](../bases/baseèline_1x2.png)
+  ![button.png](../bases/base_line_1x2.png)
 
 After printing, insert the **brass inserts** into the `top` piece using a soldering iron before assembly.
 
