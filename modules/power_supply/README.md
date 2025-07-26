@@ -26,7 +26,7 @@ Please print the following parts:
   (Standard 1×2 base)
   ![button.png](../bases/base_line_1x2.png)
 
-After printing, insert the **brass inserts** into the `top` piece using a soldering iron before assembly.
+After printing, insert the **brass inserts** into the `top` piece using a soldering iron before assembly and screws metal contacts in the `base`. 
 
 ---
 
